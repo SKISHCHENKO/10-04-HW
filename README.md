@@ -49,25 +49,25 @@
 
 ## Решение 1
 
-ansible/
-│
-├── ansible.cfg      — настройки Ansible
-├── inventory.ini    — список хостов: bastion + webservers
-├── site.yml         — основной playbook
+ansible/  
+│  
+├── ansible.cfg      — настройки Ansible  
+├── inventory.ini    — список хостов: bastion + webservers  
+├── site.yml         — основной playbook  
 
 
-terraform/
-│
-├── provider.tf
-├── versions.tf
-├── variables.tf
-├── terraform.tfvars
-├── locals.tf
-├── network.tf
-├── instances.tf
-├── lb.tf
-├── outputs.tf
-├── authorized_key.json (отсутствует в репо)     
-├── cloud-config.yml    (отсутствует в репо)    
-├── terraform.tfstate        
-└── terraform.tfstate.backup 
+terraform/  
+│  
+├── provider.tf  
+├── versions.tf  
+├── variables.tf  
+├── terraform.tfvars  
+├── locals.tf  
+├── network.tf  
+├── instances.tf  
+├── lb.tf  
+├── outputs.tf  
+├── authorized_key.json (отсутствует в репо)        
+├── cloud-config.yml    (отсутствует в репо)      
+├── terraform.tfstate            
+└── terraform.tfstate.backup   
