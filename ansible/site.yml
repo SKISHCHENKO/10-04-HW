@@ -1,0 +1,31 @@
+---
+# Основной playbook
+# 1) (опционально) можно настроить bastion
+# 2) Устанавливаем и запускаем Nginx на web-серверах
+
+- name: Настройка bastion (опционально)
+  hosts: bastion
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Обновить кеш пакетов
+      apt:
+        update_cache: yes
+      tags: [bastion]
+
+- name: Установка и запуск Nginx на web-серверах
+  hosts: webservers
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Установить Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Включить и запустить Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
